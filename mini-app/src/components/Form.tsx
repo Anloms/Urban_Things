@@ -1,4 +1,12 @@
+import { useState } from 'react';
+import Variant from './Variant';
+import { Day, Week, Month } from '../utils/utils.ts';
 export default function Form() {
+  const [variant, setVariant] = useState("");
+  function handleVariantChange(e) {
+    setVariant(e.target.value)
+  }
+  console.log(Day)
   return (
     <>
       <form
@@ -23,7 +31,7 @@ export default function Form() {
               className="centeredCalc flex flex-row justify-center w-5/6">
               <div className="flex justify-start w-3/6">
                 <label className="mr-[2rem]">select ticket variant</label>
-                <select>
+                <select onChange={handleVariantChange}>
                   <option value="">Select...</option>
                   <option value="Day">Day</option>
                   <option value="Week">Week</option>
@@ -32,6 +40,9 @@ export default function Form() {
               </div>
             </div>
 
+          </div>
+          <div className="flex justify-center ">
+            {variant && <Variant />}
           </div>
           <div className="w-[35rem] mt-[5rem]"
             style={{ marginLeft: "calc((100% - 35rem) / 2)" }}>
