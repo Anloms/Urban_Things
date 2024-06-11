@@ -3,8 +3,26 @@ import Variant from './Variant';
 import { Day, Week, Month } from '../utils/utils.ts';
 export default function Form() {
   const [variant, setVariant] = useState("");
+  const [ticketDetails, setTicketDetails] = useState(null);
+
   function handleVariantChange(e) {
-    setVariant(e.target.value)
+    const selectedVariant = e.target.value;
+    setVariant(selectedVariant)
+    let details = {}
+    switch (selectedVariant) {
+      case "Day":
+        details = Day;
+        break;
+      case "Week":
+        details = Week;
+        break;
+      case "Month":
+        details = Month;
+        break;
+      default:
+        break;
+    }
+    setTicketDetails(details)
   }
   console.log(Day)
   return (
@@ -42,7 +60,7 @@ export default function Form() {
 
           </div>
           <div className="flex justify-center ">
-            {variant && <Variant />}
+            {variant && ticketDetails && <Variant {...ticketDetails} />}
           </div>
           <div className="w-[35rem] mt-[5rem]"
             style={{ marginLeft: "calc((100% - 35rem) / 2)" }}>
