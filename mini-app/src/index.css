@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .table-reusable {
+    @apply flex flex-row justify-between border-collapse border-solid border-zinc-700 border-2 p-3 mb-5
+  }
+}
