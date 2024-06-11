@@ -5,7 +5,6 @@ import Variant from './components/Variant'
 function App() {
   return (
     <main className='bg-slate-500 w-screen h-screen pt-[5rem]'>
-      <Variant />
       <Form />
     </main>
   )
