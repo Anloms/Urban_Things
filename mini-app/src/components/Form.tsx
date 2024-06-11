@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import Variant from './Variant';
-import { Day, Week, Month } from '../utils/utils.ts';
+import { Day, Week, Month, UtilsType } from '../utils/utils.ts';
+
 export default function Form() {
   const [variant, setVariant] = useState("");
-  const [ticketDetails, setTicketDetails] = useState(null);
+  const [ticketDetails, setTicketDetails] = useState<UtilsType | null>(null);
 
-  function handleVariantChange(e) {
-    const selectedVariant = e.target.value;
-    setVariant(selectedVariant)
-    let details = {}
-    switch (selectedVariant) {
+  function handleVariantChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    const value: string = e.target.value;
+    setVariant(value);
+    let details: UtilsType | null = null;
+    switch (value) {
       case "Day":
         details = Day;
         break;

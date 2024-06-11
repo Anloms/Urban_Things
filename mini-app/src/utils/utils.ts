@@ -38,3 +38,18 @@ export const Day = {
   description: "A daily ticket.",
   order: 0
 };
+
+export interface UtilsType {
+  metadata: {
+    field0: string,
+    field1: string,
+    productId: string,
+    operatorId: string
+
+  },
+  price: number,
+  currency: string,
+  name: string,
+  description: string,
+  order: number
+}

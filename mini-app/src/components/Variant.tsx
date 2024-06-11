@@ -1,4 +1,5 @@
 import Template from './Template'
+import { UtilsType } from '../utils/utils'
 export default function Variant({
   metadata,
   price,
@@ -6,7 +7,7 @@ export default function Variant({
   name,
   description,
   order
-}) {
+}: UtilsType) {
   return (
     <div className="px-[10rem] py-[5rem] w-[80rem]">
       <caption className='table-reusable'>
@@ -19,13 +20,13 @@ export default function Variant({
         <Template value1="operationId" value2={metadata.operatorId} />
       </table>
       <table className='table-reusable'>
-        <Template value1="price" value2={price} />
+        <Template value1="price" value2={price.toString()} />
         <Template value1="currency" value2={currency} />
       </table>
       <table className='table-reusable'>
         <Template value1="name" value2={name.toString()} />
         <Template value1="description" value2={description} />
-        <Template value1="order" value2={order} />
+        <Template value1="order" value2={order.toString()} />
       </table>
     </div>
   )

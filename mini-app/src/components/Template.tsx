@@ -1,4 +1,8 @@
-export default function Template({ value1, value2 }) {
+interface ValuesType {
+  value1: string,
+  value2: string
+}
+export default function Template({ value1, value2 }: ValuesType) {
   return (
     <tbody>
       <tr className="flex flex-row justify-between wmax-[15rem] mr-[1rem]">
