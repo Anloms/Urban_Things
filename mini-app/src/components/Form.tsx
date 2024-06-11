@@ -29,7 +29,7 @@ export default function Form() {
     setTicketDetails(details)
   }
   console.log(Day)
-  function handleSubmit(e: React.ChangeEvent<FormEventHandler>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setClickBtn("generate");
   }
@@ -46,15 +46,15 @@ export default function Form() {
     <>
       <form
         onSubmit={handleSubmit}
-        className={clickBtn === "generate" ? "centeredCalc flex flex-row justify-between w-5/6 h-5/6 p-[1rem]" : "centeredCalc flex flex-col justify-between w-5/6 h-5/6 p-[5rem]"}>
+        className={clickBtn === "generate" ? "centeredCalc flex flex-row justify-between w-5/6 h-5/6 p-[1rem] -ml-[4rem]" : "centeredCalc flex flex-col justify-between w-5/6 h-5/6 p-[5rem]"}>
         <div className="flex flex-col justify-center w-full">
           <div className="centeredCalc flex flex-col justify-center w-5/6">
             <div className="centeredCalc flex flex-row justify-center w-5/6 mb-10">
               <div className="flex justify-start w-3/6">
-                <label>
+                <label className="mr-[2rem]">
                   Select ticket type:
                 </label>
-                <select className="mr-[2rem]">
+                <select>
                   <option>select..</option>
                   <option>Adult</option>
                   <option>Student</option>
@@ -87,7 +87,7 @@ export default function Form() {
           </div>
         </div>
         {clickBtn === "generate" && (
-          <div className="w-[40rem] ">
+          <div className="w-[42rem] -ml-[3rem]">
             <JSONfile details={ticketData} />
           </div>
         )}

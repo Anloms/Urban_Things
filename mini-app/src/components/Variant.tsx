@@ -10,7 +10,7 @@ export default function Variant({
 }: UtilsType) {
   return (
     <div className="px-[10rem] py-[5rem] w-[80rem]">
-      <caption className='table-reusable'>
+      <caption className='table-reusable pl-[1rem]'>
         {name} ticket
       </caption>
       <table className='table-reusable'>
